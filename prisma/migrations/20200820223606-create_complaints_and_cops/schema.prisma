@@ -1,0 +1,38 @@
+// This is your Prisma schema file
+
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Complaint {
+  id          Int @id
+  copId              String
+  asOfDate            String
+  firstName          String
+  lastName           String
+  rank                String
+  command             String
+  shieldNo            String
+  incidentDate       String
+  FADOType           String
+  allegation          String
+  boardDisposition   String
+  NYPDDisposition     String
+  penaltyDesc         String
+}
+
+model Cop {
+  id String @id
+  firstName String
+  lastName String
+  rank String
+  command String
+  shieldNo String
+}
